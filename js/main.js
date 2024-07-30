@@ -92,41 +92,50 @@ navLinks.forEach(navLink => {
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { document.getElementById("linkzalo").href = "https://zalo.me/0367588839"; }
 
 // Form submit
-const form = document.getElementById("form");
 const result = document.getElementById("result");
+const forms = document.querySelectorAll('.needs-validation')
 
-form.addEventListener("submit", function (e) {
-    const formData = new FormData(form);
-    e.preventDefault();
-    var object = {};
-    formData.forEach((value, key) => {
-        object[key] = value;
-    });
-    var json = JSON.stringify(object);
-    result.style.display = "block";
-    result.innerHTML = "Vui lòng chờ...";
-
-    fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: json
-    })
-        .then(async (response) => {
-            if (response.status == 200) {
-                swal("Thành công!", "Bạn hãy nhấn vào nút để quay lại!", "success");
+Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+        form.addEventListener("submit", function (e) {
+            if (!form.checkValidity()) {
+                e.preventDefault()
+                e.stopPropagation()
+                form.classList.add('was-validated')
             } else {
-                swal("Thất bại!", "Bạn hãy nhấn vào nút để quay lại!", "error");
-                console.log(response);
+                const formData = new FormData(form);
+                e.preventDefault();
+                var object = {};
+                formData.forEach((value, key) => {
+                    object[key] = value;
+                });
+                var json = JSON.stringify(object);
+                result.style.display = "block";
+                result.innerHTML = "Vui lòng chờ...";
+
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                    },
+                    body: json
+                })
+                    .then(async (response) => {
+                        if (response.status == 200) {
+                            swal("Thành công!", "Bạn hãy nhấn vào nút để quay lại!", "success");
+                        } else {
+                            swal("Thất bại!", "Bạn hãy nhấn vào nút để quay lại!", "error");
+                            console.log(response);
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        form.reset();
+                        result.style.display = "none";
+                    });
             }
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        .then(function () {
-            form.reset();
-            result.style.display = "none";
-        });
-});
+        },);
+    })

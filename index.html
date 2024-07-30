@@ -352,7 +352,8 @@
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
                             <p class="mb-4">Vui lòng điền đầy đủ thông tin và gửi yêu cầu của bạn đến BQT website. Chúng
                                 tôi sẽ phản hồi trong thời gian sớm nhất.</p>
-                            <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <form action="https://api.web3forms.com/submit" method="POST" class="needs-validation"
+                                novalidate>
                                 <div class="row g-3">
                                     <input type="hidden" name="access_key"
                                         value="8c6e34b9-12b1-4f89-a5ba-fb840661ceb2" />
@@ -361,6 +362,9 @@
                                             <input type="text" name="username" class="form-control" id="username"
                                                 placeholder="Họ và Tên" required>
                                             <label for="username">Họ và tên</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng điền Họ và tên.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -368,6 +372,9 @@
                                             <input type="text" name="phone" class="form-control" id="phone"
                                                 placeholder="Điện thoại" required>
                                             <label for="phone">Điện thoại</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng điền Số điện thoại.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -375,15 +382,21 @@
                                             <input type="email" name="email" class="form-control" id="email"
                                                 placeholder="Email" required>
                                             <label for="email">Email</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng điền Email.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-floating select-input">
-                                            <select id="course" name="course" class="form-control" required>
-                                                <option value="" disabled selected>Khóa học và Dịch vụ</option>
+                                        <div class="form-floating">
+                                            <select id="course" name="course" class="form-select" required>
+                                                <option value="" disabled selected>Hãy chọn khóa học hoặc dịch vụ bạn
+                                                    muốn!</option>
                                                 <optgroup label="Khóa học">
-                                                    <option value="Đào tạo lái xe A1,A2">Đào tạo lái xe A1,A2</option>
-                                                    <option value="Đào tạo lái xe B1,B2,B11">Đào tạo lái xe B1,B2,B11
+                                                    <option value="Đào tạo lái xe A1,A2">Đào tạo lái xe A1,A2
+                                                    </option>
+                                                    <option value="Đào tạo lái xe B1,B2,B11">Đào tạo lái xe
+                                                        B1,B2,B11
                                                     </option>
                                                     <option value="Đào tạo lái xe C">Đào tạo lái xe C</option>
                                                     <option value="Nâng dấu các hạng D,E,F">Nâng dấu các hạng D,E,F
@@ -392,12 +405,18 @@
                                                 <optgroup label="Dịch vụ">
                                                     <option value="Bổ túc tay lái cho người mới">Bổ túc tay lái cho
                                                         người mới</option>
-                                                    <option value="Làm các vấn đề về bằng lái">Làm các vấn đề về bằng
+                                                    <option value="Làm các vấn đề về bằng lái">Làm các vấn đề về
+                                                        bằng
                                                         lái</option>
                                                     <option value="Nhận làm passport">Nhận làm passport</option>
-                                                    <option value="Bán bảo hiểm thân xe">Bán bảo hiểm thân xe</option>
+                                                    <option value="Bán bảo hiểm thân xe">Bán bảo hiểm thân xe
+                                                    </option>
                                                 </optgroup>
                                             </select>
+                                            <label for="course">Khóa học Or Dịch vụ</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng chọn một Khóa học hoặc Dịch vụ.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">

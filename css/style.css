@@ -599,38 +599,8 @@ span#fcta-zalo-tracking {
 }
 
 /*** Select Input ***/
-#course {
-    padding: 0 12px;
-    background-color: #fff;
-}
-
-.select-input select {
-    cursor: pointer;
-}
-
-.select-input option[value=""][disabled] {
+#course option[value=""][disabled] {
     display: none;
-}
-
-
-.select-input::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    padding: 1em;
-    color: #fff;
-    background-color: #00B98E;
-    transition: .25s all ease;
-    pointer-events: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.select-input:hover::after {
-    color: #fff9;
-    background-color: rgb(0, 185, 142, 0.9);
 }
 
 #result {
