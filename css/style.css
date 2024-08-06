@@ -677,3 +677,60 @@ span#fcta-zalo-tracking {
     padding-right: 0;
     border-right: none;
 }
+
+/* Gallery CSS */
+.gallery,
+.gallery-videos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.gallery-videos a {
+    position: relative;
+}
+
+.gallery-videos a .box-content {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    bottom: 0;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: opacity 0.6s, transform 0.6s;
+    transform: scale(0, 1);
+}
+
+.box-content p {
+    margin: 0;
+    text-align: center;
+}
+
+.gallery-videos a:hover .box-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery a img,
+.gallery-videos a img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.gallery a img:hover {
+    transform: scale(1.2);
+}
