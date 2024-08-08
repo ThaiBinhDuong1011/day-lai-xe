@@ -208,13 +208,13 @@ span#fcta-zalo-tracking {
     margin: 15px 0;
     padding: 0 3rem;
     transition: .5s;
-    z-index: 9999;
+    z-index: 1;
 }
 
 .nav-bar.sticky-top {
     position: sticky;
     padding: 0;
-    z-index: 9999;
+    z-index: 1;
 }
 
 .navbar {
@@ -706,7 +706,7 @@ span#fcta-zalo-tracking {
     font-size: 20px;
     font-weight: 700;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
     transition: opacity 0.6s, transform 0.6s;
     transform: scale(0, 1);
