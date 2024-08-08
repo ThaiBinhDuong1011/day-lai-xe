@@ -208,13 +208,11 @@ span#fcta-zalo-tracking {
     margin: 15px 0;
     padding: 0 3rem;
     transition: .5s;
-    z-index: 1;
 }
 
 .nav-bar.sticky-top {
     position: sticky;
     padding: 0;
-    z-index: 1;
 }
 
 .navbar {
