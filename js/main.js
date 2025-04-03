@@ -139,3 +139,7 @@ Array.prototype.slice.call(forms)
             }
         },);
     })
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+    });

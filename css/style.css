@@ -481,16 +481,13 @@ span#fcta-zalo-tracking {
     transform: scale(1.1);
 }
 
-.property-item a:hover {
+.property-item .codepro-custom-btn:hover {
     color: white;
 }
 
 .codepro-custom-btn {
-    width: 130px;
-    height: 40px;
     color: #fff;
     border-radius: 5px;
-    padding: 10px 25px;
     font-family: 'Lato', sans-serif;
     font-weight: 500;
     background: transparent;
@@ -503,9 +500,6 @@ span#fcta-zalo-tracking {
 }
 
 .codepro-btn-12 {
-    position: relative;
-    right: 20px;
-    bottom: 20px;
     border: none;
     box-shadow: none;
     width: 130px;
@@ -732,3 +726,28 @@ span#fcta-zalo-tracking {
 .gallery a img:hover {
     transform: scale(1.2);
 }
+
+.content-about-item {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.content-about-item__icon {
+    padding: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    color: #0068ff;
+    border: 1px dashed #0068ff;
+}
+
+.content-about-item__icon:hover {
+    color: #0004ff;
+}
+
+.tooltip-inner {
+    background-color: #00acd6;
+    color: #fff;
+  }
